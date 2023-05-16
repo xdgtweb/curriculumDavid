@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Curriculum de David García Torres</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                text-align: justify;
+
+                -webkit-touch-callout: none; /* Safari */
+                -webkit-user-select: none; /* Safari */
+                -khtml-user-select: none; /* Konqueror HTML */
+                -moz-user-select: none; /* Firefox */
+                -ms-user-select: none; /* Internet Explorer/Edge */
+                user-select: none; /* No estándar */
+            }
+
+            /* Habilitar la selección de texto */
+            p, span, div, img {
+                -webkit-touch-callout: none; /* Safari */
+                -webkit-user-select: none; /* Safari */
+                -khtml-user-select: none; /* Konqueror HTML */
+                -moz-user-select: none; /* Firefox */
+                -ms-user-select: none; /* Internet Explorer/Edge */
+                user-select: none; /* No estándar */
+            }
+
+
+            body {
+                font-family: Arial, sans-serif;
+                background-color: white;
+            }
+
+            #bordesFijos
+            {
+                position: fixed;
+                border-bottom: 5px greenyellow solid;
+            }
+
+            #encabezado {
+                background-color: green;
+                position: fixed;
+                height: 200px;
+                top: 0;
+                left: 0;
+                right: 0;
+                z-index: 1;
+                transition: 0.4s;
+            }
+
+            #encabezado .contenedor {
+                max-width: 800px;
+                margin: 0 auto;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                height: 100%;
+                transition: 0.4s;
+            }
+
+            #baner
+            {
+                transition: 0.3s;
+            }
+
+
+            #baner img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                opacity: 1;
+                transition: 0.4s;
+            }
+
+            #perfil {
+                position: relative;
+                top: 80%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 2;
+                width: 180px;
+                height: 180px;
+                border-radius: 50%;
+                overflow: hidden;
+                animation: shadowAnimacion 1s ease-in-out infinite alternate;
+                transition: 0.4s;
+                border: 5px green solid;
+                z-index: 1;
+            }
+
+            @keyframes shadowAnimacion {
+                0% {
+                    box-shadow: 0px 0px 5px 0px rgba(0, 128, 0, 0.5);
+                }
+                100% {
+                    box-shadow: 0px 0px 60px 0px rgba(0, 128, 0, 0.8);
+                }
+            }
+
+            #perfil img
+            {
+                width: 100%;
+                height: 100%;
+                transition: 0s;
+            }
+
+            #caja2
+            {
+                padding: 20px;
+            }
+
+            #caja1
+            {
+                background-color: white;
+                border-radius: 30px;
+                margin-left: 5px;
+                margin-right: 5px;
+            }
+
+            #contenido {
+                max-width: 800px;
+                margin: 300px auto 50px;
+                margin-top: 280px;
+                background-color: white;
+                border-radius: 30px;
+                background-color: green;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                box-shadow: 0px 0px 60px 0px rgba(0, 128, 0, 0.2);
+                animation: shadowAnimacion2 1s ease-in-out infinite alternate;
+            }
+
+            @keyframes shadowAnimacion2 {
+                0% {
+                    background-color: green;
+                }
+                100% {
+                    background-color: #00cc00;
+                }
+            }
+
+            #nombre {
+                font-size: 32px;
+                font-weight: bold;
+                margin-bottom: 10px;
+            }
+
+            .referencia {
+                font-size: 20px;
+                margin-bottom: 10px;
+            }
+
+            .refCont {
+                font-size: 16px;
+                line-height: 1.5;
+                margin-bottom: 10px;
+            }
+
+            #datos {
+                list-style: none;
+                margin-bottom: 10px;
+            }
+
+            #datos li {
+                display: inline-block;
+                margin-right: 10px;
+            }
+
+            #datos li:last-child {
+                margin-right: 0;
+            }
+
+            #datos li a {
+                color: #3b5998;
+                text-decoration: none;
+            }
+
+            #datos li a:hover {
+                text-decoration: underline;
+            }
+
+            #datos li a img {
+                width: 24px;
+                height: 24px;
+                margin-right: 5px;
+                vertical-align: middle;
+            }
+
+            .cajaBlock
+            {
+                display: block;
+                text-align: center;
+            }
+
+            .boton {
+                width: 80px;
+                height: 40px;
+                display: inline-block;
+                background-color: green;
+                color: white;
+                text-decoration: none;
+                border-radius: 5px;
+                font-weight: bold;
+                margin-top: 10px;
+                margin-bottom: 10px;
+                margin-left: 5%;
+                margin-right: 5%;
+                transition: 0.3s;
+                line-height: 40px;
+                text-align: center;
+                vertical-align: middle;
+            }
+
+            .boton:hover {
+                background-color: greenyellow;
+                color: black;
+                transition: 0.3s;
+            }
+
+            article {
+                margin-bottom: 50px;
+            }
+
+            article h2 {
+                font-size: 24px;
+                margin-bottom: 10px;
+                margin-top: 10px;
+            }
+
+            article p {
+                font-size: 16px;
+                line-height: 1.5;
+                margin-bottom: 10px;
+            }
+
+            nav {
+                margin-right: 20px;
+            }
+
+            nav ul {
+                list-style: none;
+                display: flex;
+            }
+
+            nav li {
+                margin-left: 20px;
+            }
+
+            nav li:first-child {
+                margin-left: 0;
+            }
+
+            nav a {
+                color: #fff;
+                text-decoration: none;
+                font-weight: bold;
+                font-size: 16px;
+                padding: 10px;
+                transition: background-color 0.2s ease-in-out;
+            }
+
+            nav a:hover {
+                background-color: rgba(255, 255, 255, 0.1);
+            }
+
+            /* Nueva sección de estilos para el encabezado cuando se hace scroll */
+            #encabezado.scroll {
+                height: 60px;
+            }
+
+            #encabezado.scroll .contenedor {
+                height: 100%;
+            }
+
+            #perfil.scroll {
+                width: 50px;
+                height: 50px;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                left: 5%; /* Cambiar de 25% a 5% */
+                border: 2.5px green solid;
+                box-shadow: 0px 0px 10px 0px green;
+            }
+
+            #baner.scroll {
+                opacity: 0.6;
+                transition: 0.4s;
+            }
+
+            #perfil.scroll img {
+                width: 100%;
+                height: auto;
+            }
+
+            .br1
+            {
+                margin-top: 7px;
+                margin-bottom: 7px;
+            }
+
+            .puntito
+            {
+                position: relative;
+                top: 11px;
+                margin-right: 5px;
+                display: inline-block;
+                min-width: 13px;
+                height: 13px;
+                background-color: green;
+                border-radius: 50px;
+                animation: shadowAnimacion5 1s ease-in-out infinite alternate;
+            }
+
+            @keyframes shadowAnimacion5 {
+                0% {
+                    background-color: green;
+                }
+                100% {
+                    background-color: #00cc00;
+                }
+            }
+
+            .cajaFlex
+            {
+                display: flex;
+            }
+
+            .tabulacion
+            {
+                text-indent: 40px;
+            }
+
+            @media screen and (max-width: 815px)
+            {
+
+                body
+                {
+
+                }
+
+                #contenido
+                {
+                    max-width: 800px;
+                    margin: 0px auto 0px;
+                    margin-top: 280px;
+                    background-color: green;
+                    border-radius: 30px 30px 0px 0px;
+                    background-color: green;
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                }
+
+                #caja1
+                {
+                    background-color: white;
+                    border-radius: 20px;
+                    margin-left: 10px;
+                    margin-right: 10px;
+                }
+
+                .parcheVerde
+                {
+                    width: 100%;
+                    height: 30px;
+                    position: fixed;
+                    left: 0px;
+                    bottom: 0px;
+                    border-radius: 0px 0px 30px 30px;
+                    border-left: 10px green solid;
+                    border-right: 10px green solid;
+                    border-bottom: 10px green solid;
+                    animation: shadowAnimacion3 1s ease-in-out infinite alternate;
+                }
+
+                @keyframes shadowAnimacion3 {
+                    0% {
+                        border-left: 10px green solid;
+                        border-right: 10px green solid;
+                        border-bottom: 10px green solid;
+                    }
+                    100% {
+                        border-left: 10px #00cc00 solid;
+                        border-right: 10px #00cc00 solid;
+                        border-bottom: 10px #00cc00 solid;
+                    }
+                }
+
+                #margenAbajo
+                {
+                    width: 100%;
+                    height: 30px;
+                    position: fixed;
+                    bottom: 0;
+                    border-bottom: 10px green solid;
+                    z-index: 2;
+                    animation: shadowAnimacion4 1s ease-in-out infinite alternate;
+                }
+
+                @keyframes shadowAnimacion4 {
+                    0% {
+                        border-bottom: 10px green solid;
+                    }
+                    100% {
+                        border-bottom: 10px #00cc00 solid;
+                    }
+                }
+
+            }
+
+        </style>
+    </head>
+    <body>
+        <header id="encabezado">
+            <div id="baner">
+                <img src="logoB.png" alt="Imagen de portada">
+            </div>
+            <div id="perfil">
+                <img src="logoA.png" alt="Foto de perfil">
+            </div>
+        </header>
+
+        <main id="contenido">
+            <div id="caja1">
+                <div id="caja2">
+                    <h1 id="nombre">David García Torres</h1>
+                    <h2 class="referencia">Estudiante</h2>
+                    <p class="refCont">Mi edad es de 24 años, tengo el título de grado 
+                        medio de Electricidad, grado superior de Robótica en el instituto 
+                        IES Serra D'espada (Onda), acabo de terminar mis estudios grado 
+                        superior de Diseño de Aplicaciones Web (DAW) en IES Miralcamp 
+                        (Villarreal), también tengo carnet de conducir.</p>
+                    <!-- <ul id="datos">
+                        <li><a href="#"><img src="facebook.png" alt="Facebook"></a></li>
+                        <li><a href="#"><img src="twitter.png" alt="Twitter"></a></li>
+                        <li><a href="#"><img src="instagram.png" alt="Instagram"></a></li>
+                    </ul> -->
+                    <div class="cajaBlock">
+                        <a href="mailto:xxxdddgggttt@gmail.com" class="boton">Email</a>
+                        <a href="tel:653578617" class="boton">Llamar</a>
+                    </div>
+                    <h2 class="referencia">Experiencia profesional</h2>
+                    <p class="refCont">
+                        Soy hábil en el manejo de programas de ofimática y tengo 
+                        experiencia en el uso de diferentes softwares de 
+                        programación y diseño. Además, estoy familiarizado/a 
+                        con lenguajes de programación como HTML, CSS, JS, 
+                        Python, Java, C++... y he trabajado con entornos de 
+                        desarrollo integrados (IDE) como Visual Studio y 
+                        NetBeans. Mi capacidad para utilizar eficientemente 
+                        estas herramientas me permite realizar tareas de manera 
+                        eficaz y mejorar la productividad en diferentes entornos 
+                        de trabajo.
+                    </p>
+                    <h2 class="referencia">Formación</h2>
+                    <div class="refCont">
+                        <div class="ul">
+                            <div class="cajaFlex">
+                                <div class="puntito"></div>
+                                <div class="br1">
+                                    Ciclo Medio de Electricidad / IES Serra D'espadá con 
+                                    380 horas de prácticas en la empresa; Instema / Proseleco.
+                                </div>
+                            </div>
+                            <div class="cajaFlex">
+                                <div class="puntito"></div>
+                                <div class="br1">
+                                    Ciclo Superior de Robótica / IES Serra D’espadá con 400 
+                                    horas de prácticas en la empresa; Peronda Group.
+                                </div>
+                            </div>
+                            <div class="cajaFlex">
+                                <div class="puntito"></div>
+                                <div class="br1">
+                                    Ciclo Superior de Informática / IES Miralcamp. con 400 
+                                    horas de prácticas en la empresa; Tauten Mediadores de 
+                                    Seguros.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h2 class="referencia">Competencias</h2>
+                    <div class="refCont">
+                        <div class="cajaFlex">
+                            <div class="puntito"></div>
+                            <div class="br1">
+                                Trabajo en equipo
+                            </div>
+                        </div>
+                        <div class="cajaFlex">
+                            <div class="puntito"></div>
+                            <div class="br1">
+                                Adaptación a los cambios
+                            </div>
+                        </div>
+                        <div class="cajaFlex">
+                            <div class="puntito"></div>
+                            <div class="br1">
+                                Lealtad a los valores de la empresa
+                            </div>
+                        </div>
+                        <div class="cajaFlex">
+                            <div class="puntito"></div>
+                            <div class="br1">
+                                Orientación a resultados
+                            </div>
+                        </div>
+                        <div class="cajaFlex">
+                            <div class="puntito"></div>
+                            <div class="br1">
+                                Comunicación fluida y correcta
+                            </div>
+                        </div>
+                        <div class="cajaFlex">
+                            <div class="puntito"></div>
+                            <div class="br1">
+                                Ganas de aprender y superarme
+                            </div>
+                        </div>
+                    </div>
+                    <h2 class="referencia">Preferencias</h2>
+                    <p class="refCont">
+                        Me gusta todo lo que tenga que ver con usar un ordenador 
+                        y me adapto a cualquier programa informático para 
+                        realizar todo tipo de proyectos.
+                    </p>
+                    <h2 class="referencia">Idiomas</h2>
+                    <div class="refCont">
+                        <div class="cajaFlex">
+                            <div class="puntito"></div>
+                            <div class="br1">
+                                Español: Nativo
+                            </div>
+                        </div>
+                        <div class="cajaFlex">
+                            <div class="puntito"></div>
+                            <div class="br1">
+                                Inglés: Bajo
+                            </div>
+                        </div>
+                    </div>
+                    <h2 class="referencia">Software</h2>
+                    <h2 class="referencia">Robótica</h2>
+                    <h2 class="referencia">Lenguajes de programación</h2>
+                    <div class="refCont">
+                        <div class="cajaFlex">
+                            <div class="puntito"></div>
+                            <div class="br1">
+                                Ladder
+                            </div>
+                        </div>
+                        <div class="cajaFlex">
+                            <div class="puntito"></div>
+                            <div class="br1">
+                                C++
+                            </div>
+                        </div>
+                    </div>
+                    <h2 class="referencia">Programas</h2>
+                    <div class="refCont">
+                        <div class="cajaFlex">
+                            <div class="puntito"></div>
+                            <div class="br1">
+                                Omron CX-One
+                            </div>
+                        </div>
+                        <div class="cajaFlex">
+                            <div class="puntito"></div>
+                            <div class="br1">
+                                Siemens TIA Portal
+                            </div>
+                        </div>
+                        <div class="cajaFlex">
+                            <div class="puntito"></div>
+                            <div class="br1">
+                                AutoDesk Inventor y Electrical
+                            </div>
+                        </div>
+                        <div class="cajaFlex">
+                            <div class="puntito"></div>
+                            <div class="br1">
+                                Impresión 3D y variantes
+                            </div>
+                        </div>
+                        <div class="cajaFlex">
+                            <div class="puntito"></div>
+                            <div class="br1">
+                                Weintek HMI's
+                            </div>
+                        </div>
+                        <div class="cajaFlex">
+                            <div class="puntito"></div>
+                            <div class="br1">
+                                Robotstudio
+                            </div>
+                        </div>
+                    </div>
+                    <h2 class="referencia">Informática</h2>
+                    <h2 class="referencia">Lenguajes de programación</h2>
+                    <div class="refCont">
+                        <div class="cajaFlex">
+                            <div class="puntito"></div>
+                            <div class="br1">
+                                Java
+                            </div>
+                        </div>
+                        <div class="cajaFlex">
+                            <div class="puntito"></div>
+                            <div class="br1">
+                                Java Script
+                            </div>
+                        </div>
+                        <div class="cajaFlex">
+                            <div class="puntito"></div>
+                            <div class="br1">
+                                HTML
+                            </div>
+                        </div>
+                        <div class="cajaFlex">
+                            <div class="puntito"></div>
+                            <div class="br1">
+                                CSS
+                            </div>
+                        </div>
+                        <div class="cajaFlex">
+                            <div class="puntito"></div>
+                            <div class="br1">
+                                PHP
+                            </div>
+                        </div>
+                        <div class="cajaFlex">
+                            <div class="puntito"></div>
+                            <div class="br1">
+                                SQL
+                            </div>
+                        </div>
+                    </div>
+                    <h2 class="referencia">Programas</h2>
+                    <div class="refCont">
+                        <div class="cajaFlex">
+                            <div class="puntito"></div>
+                            <div class="br1">
+                                Apache NetBeans IDE
+                            </div>
+                        </div>
+                        <div class="cajaFlex">
+                            <div class="puntito"></div>
+                            <div class="br1">
+                                Visual Code Studio
+                            </div>
+                        </div>
+                        <div class="cajaFlex">
+                            <div class="puntito"></div>
+                            <div class="br1">
+                                XAMPP
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <footer>
+                        <p>Derechos de autor &copy; 2023 - Mi empresa</p>
+                    </footer> -->
+                </div>
+            </div>
+            <div id="margenAbajo">
+                <div class="parcheVerde"></div>
+            </div>
+        </main>
+
+        <script>
+            // Obtener elementos del DOM
+            // Detectar el scroll
+            window.addEventListener('scroll', function () {
+                var encabezado = document.getElementById('encabezado');
+                var perfil = document.getElementById('perfil');
+                var baner = document.getElementById('baner');
+
+                // Calcular la cantidad de scroll realizada
+                var scrolled = window.scrollY;
+
+                // Ajustar la altura del encabezado, el ancho y la opacidad del baner y la foto de perfil
+                var headerHeight = Math.max(200 - scrolled, 60);
+                var bannerWidth = Math.max(100 - scrolled / 4, 50);
+                var bannerOpacity = Math.max(1 - scrolled / 200, 0.8);
+                var perfilSize = Math.max(180 - scrolled / 1, 50);
+                var perfilLeft = Math.max(50 - scrolled / 1, 25);
+
+                // Aplicar los cambios de tamaño y posición con una transición CSS
+                encabezado.style.height = headerHeight + 'px';
+                baner.style.width = bannerWidth + '%';
+                baner.style.opacity = bannerOpacity;
+                perfil.style.width = perfilSize + 'px';
+                perfil.style.height = perfilSize + 'px';
+                perfil.style.left = perfilLeft + '%';
+
+                // Agregar o eliminar la clase "scroll" según sea necesario
+                if (scrolled > 40) {
+                    encabezado.classList.add('scroll');
+                    perfil.classList.add('scroll');
+                } else {
+                    encabezado.classList.remove('scroll');
+                    perfil.classList.remove('scroll');
+                }
+            });
+
+        </script>
+    </body>
+</html>
