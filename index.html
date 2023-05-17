@@ -9,7 +9,6 @@
                 margin: 0;
                 padding: 0;
                 box-sizing: border-box;
-                text-align: justify;
 
                 -webkit-touch-callout: none; /* Safari */
                 -webkit-user-select: none; /* Safari */
@@ -49,7 +48,7 @@
                 left: 0;
                 right: 0;
                 z-index: 1;
-                transition: 0.4s;
+                transition: 0.3s;
             }
 
             #encabezado .contenedor {
@@ -59,7 +58,7 @@
                 justify-content: space-between;
                 align-items: center;
                 height: 100%;
-                transition: 0.4s;
+                transition: 0.3s;
             }
 
             #baner
@@ -76,7 +75,7 @@
                 height: 100%;
                 object-fit: cover;
                 opacity: 1;
-                transition: 0.4s;
+                transition: 0.3s;
             }
 
             #perfil {
@@ -90,7 +89,7 @@
                 border-radius: 50%;
                 overflow: hidden;
                 animation: shadowAnimacion 1s ease-in-out infinite alternate;
-                transition: 0.4s;
+                transition: 0.3s;
                 border: 5px green solid;
                 z-index: 1;
             }
@@ -146,10 +145,12 @@
                 }
             }
 
-            #nombre {
+            #nombre, #nombreFijo {
                 font-size: 32px;
                 font-weight: bold;
                 margin-bottom: 10px;
+                font-family: "h2";
+                font-weight: bold;
             }
 
             .referencia {
@@ -209,35 +210,56 @@
                 border-radius: 5px;
                 font-weight: bold;
                 margin-top: 10px;
-                margin-bottom: 10px;
+                margin-bottom: 20px;
                 margin-left: 5%;
                 margin-right: 5%;
                 transition: 0.3s;
                 line-height: 40px;
                 text-align: center;
                 vertical-align: middle;
+                animation: shadowAnimacion5 1s ease-in-out infinite alternate;
             }
 
             .boton:hover {
                 background-color: greenyellow;
                 color: black;
                 transition: 0.3s;
+                animation: shadowAnimacion6 1s ease-in-out infinite alternate;
+            }
+
+            @keyframes shadowAnimacion6 {
+                0% {
+                    background-color: greenyellow;
+                }
+                100% {
+                    background-color: #00cc00;
+                }
+            }
+
+            .boton:active {
+                animation: shadowAnimacion7 1s ease-in-out infinite alternate;
+                background-color: aquamarine;
+                transition: 0.3s;
+            }
+
+            @keyframes shadowAnimacion7 {
+                0% {
+                    background-color: aquamarine;
+                }
             }
 
             article {
                 margin-bottom: 50px;
             }
 
-            article h2 {
-                font-size: 24px;
-                margin-bottom: 10px;
-                margin-top: 10px;
+            h2 {
+                font-family: "h2";
             }
 
-            article p {
-                font-size: 16px;
-                line-height: 1.5;
-                margin-bottom: 10px;
+            p {
+                font-family: "p";
+                text-align: justify;
+                font-weight: bold;
             }
 
             nav {
@@ -303,6 +325,8 @@
             {
                 margin-top: 7px;
                 margin-bottom: 7px;
+                font-family: "p";
+                font-weight: bold;
             }
 
             .puntito
@@ -310,12 +334,24 @@
                 position: relative;
                 top: 11px;
                 margin-right: 5px;
+                margin-left: 20px;
                 display: inline-block;
                 min-width: 13px;
                 height: 13px;
                 background-color: green;
                 border-radius: 50px;
                 animation: shadowAnimacion5 1s ease-in-out infinite alternate;
+            }
+
+            .espacioAux
+            {
+                position: relative;
+                top: 11px;
+                margin-right: 5px;
+                display: inline-block;
+                min-width: 15px;
+                height: 15px;
+                background-color: transparent;
             }
 
             @keyframes shadowAnimacion5 {
@@ -332,9 +368,29 @@
                 display: flex;
             }
 
-            .tabulacion
+            #nombreFijo {
+                position: fixed;
+                top: 15px;
+                color: white;
+                right: auto;
+                z-index: 999999;
+                width: 100%;
+                text-align: center;
+                font-size: 24px;
+                font-weight: bold;
+                display: none;
+                transition: 0.3s;
+            }
+
+            @font-face 
             {
-                text-indent: 40px;
+                font-family: "h2";
+                src: url("h2.otf");
+            }
+            @font-face 
+            {
+                font-family: "p";
+                src: url("p.otf");
             }
 
             @media screen and (max-width: 815px)
@@ -412,6 +468,41 @@
                     }
                 }
 
+                #nombreFijo
+                {
+                    right: -5%;
+                    transition: 0.3s;
+                }
+
+            }
+
+            @media screen and (max-width: 500px)
+            {
+                #nombreFijo
+                {
+                    right: -10%;
+                    transition: 0.3s;
+                }
+            }
+            @media screen and (max-width: 500px)
+            {
+                #nombreFijo
+                {
+                    top: 18px;
+                    right: -10%;
+                    font-size: 20px;
+                    transition: 0.3s;
+                }
+            }
+            @media screen and (max-width: 370px)
+            {
+                #nombreFijo
+                {
+                    right: -15%;
+                    top: 20px;
+                    font-size: 18px;
+                    transition: 0.3s;
+                }
             }
 
         </style>
@@ -425,7 +516,7 @@
                 <img src="logoA.png" alt="Foto de perfil">
             </div>
         </header>
-
+        <div id="nombreFijo">David García Torres</div>
         <main id="contenido">
             <div id="caja1">
                 <div id="caja2">
@@ -435,7 +526,9 @@
                         medio de Electricidad, grado superior de Robótica en el instituto 
                         IES Serra D'espada (Onda), acabo de terminar mis estudios grado 
                         superior de Diseño de Aplicaciones Web (DAW) en IES Miralcamp 
-                        (Villarreal), también tengo carnet de conducir.</p>
+                        (Villarreal), también tengo carnet de conducir, busco mi primer
+                        trabajo.
+                    </p>
                     <!-- <ul id="datos">
                         <li><a href="#"><img src="facebook.png" alt="Facebook"></a></li>
                         <li><a href="#"><img src="twitter.png" alt="Twitter"></a></li>
@@ -453,10 +546,7 @@
                         con lenguajes de programación como HTML, CSS, JS, 
                         Python, Java, C++... y he trabajado con entornos de 
                         desarrollo integrados (IDE) como Visual Studio y 
-                        NetBeans. Mi capacidad para utilizar eficientemente 
-                        estas herramientas me permite realizar tareas de manera 
-                        eficaz y mejorar la productividad en diferentes entornos 
-                        de trabajo.
+                        NetBeans.
                     </p>
                     <h2 class="referencia">Formación</h2>
                     <div class="refCont">
@@ -546,117 +636,139 @@
                         </div>
                     </div>
                     <h2 class="referencia">Software</h2>
-                    <h2 class="referencia">Robótica</h2>
-                    <h2 class="referencia">Lenguajes de programación</h2>
+                    <div class="cajaFlex">
+                        <div class="espacioAux"></div>
+                        <h2 class="referencia">Robótica</h2>
+                    </div>
+                    <div class="cajaFlex">
+                        <div class="espacioAux"></div>
+                        <div class="espacioAux"></div>
+                        <h2 class="referencia">Lenguajes de programación</h2>
+                    </div>
                     <div class="refCont">
                         <div class="cajaFlex">
-                            <div class="puntito"></div>
+                            <div class="puntito" style="margin-left: 60px;"></div>
                             <div class="br1">
                                 Ladder
                             </div>
                         </div>
                         <div class="cajaFlex">
-                            <div class="puntito"></div>
+                            <div class="puntito" style="margin-left: 60px;"></div>
                             <div class="br1">
                                 C++
                             </div>
                         </div>
                     </div>
-                    <h2 class="referencia">Programas</h2>
+                    <div class="cajaFlex">
+                        <div class="espacioAux"></div>
+                        <div class="espacioAux"></div>
+                        <h2 class="referencia">Programas</h2>
+                    </div>
                     <div class="refCont">
                         <div class="cajaFlex">
-                            <div class="puntito"></div>
+                            <div class="puntito" style="margin-left: 60px;"></div>
                             <div class="br1">
                                 Omron CX-One
                             </div>
                         </div>
                         <div class="cajaFlex">
-                            <div class="puntito"></div>
+                            <div class="puntito" style="margin-left: 60px;"></div>
                             <div class="br1">
                                 Siemens TIA Portal
                             </div>
                         </div>
                         <div class="cajaFlex">
-                            <div class="puntito"></div>
+                            <div class="puntito" style="margin-left: 60px;"></div>
                             <div class="br1">
                                 AutoDesk Inventor y Electrical
                             </div>
                         </div>
                         <div class="cajaFlex">
-                            <div class="puntito"></div>
+                            <div class="puntito" style="margin-left: 60px;"></div>
                             <div class="br1">
                                 Impresión 3D y variantes
                             </div>
                         </div>
                         <div class="cajaFlex">
-                            <div class="puntito"></div>
+                            <div class="puntito" style="margin-left: 60px;"></div>
                             <div class="br1">
                                 Weintek HMI's
                             </div>
                         </div>
                         <div class="cajaFlex">
-                            <div class="puntito"></div>
+                            <div class="puntito" style="margin-left: 60px;"></div>
                             <div class="br1">
                                 Robotstudio
                             </div>
                         </div>
                     </div>
-                    <h2 class="referencia">Informática</h2>
-                    <h2 class="referencia">Lenguajes de programación</h2>
+                    <div class="cajaFlex">
+                        <div class="espacioAux"></div>
+                        <h2 class="referencia">Informática</h2>
+                    </div>
+                    <div class="cajaFlex">
+                        <div class="espacioAux"></div>
+                        <div class="espacioAux"></div>
+                        <h2 class="referencia">Lenguajes de programación</h2>
+                    </div>
                     <div class="refCont">
                         <div class="cajaFlex">
-                            <div class="puntito"></div>
+                            <div class="puntito" style="margin-left: 60px;"></div>
                             <div class="br1">
                                 Java
                             </div>
                         </div>
                         <div class="cajaFlex">
-                            <div class="puntito"></div>
+                            <div class="puntito" style="margin-left: 60px;"></div>
                             <div class="br1">
                                 Java Script
                             </div>
                         </div>
                         <div class="cajaFlex">
-                            <div class="puntito"></div>
+                            <div class="puntito" style="margin-left: 60px;"></div>
                             <div class="br1">
                                 HTML
                             </div>
                         </div>
                         <div class="cajaFlex">
-                            <div class="puntito"></div>
+                            <div class="puntito" style="margin-left: 60px;"></div>
                             <div class="br1">
                                 CSS
                             </div>
                         </div>
                         <div class="cajaFlex">
-                            <div class="puntito"></div>
+                            <div class="puntito" style="margin-left: 60px;"></div>
                             <div class="br1">
                                 PHP
                             </div>
                         </div>
                         <div class="cajaFlex">
-                            <div class="puntito"></div>
+                            <div class="puntito" style="margin-left: 60px;"></div>
                             <div class="br1">
                                 SQL
                             </div>
                         </div>
                     </div>
-                    <h2 class="referencia">Programas</h2>
+                    <div class="cajaFlex">
+                        <div class="espacioAux"></div>
+                        <div class="espacioAux"></div>
+                        <h2 class="referencia">Programas</h2>
+                    </div>
                     <div class="refCont">
                         <div class="cajaFlex">
-                            <div class="puntito"></div>
+                            <div class="puntito" style="margin-left: 60px;"></div>
                             <div class="br1">
                                 Apache NetBeans IDE
                             </div>
                         </div>
                         <div class="cajaFlex">
-                            <div class="puntito"></div>
+                            <div class="puntito" style="margin-left: 60px;"></div>
                             <div class="br1">
                                 Visual Code Studio
                             </div>
                         </div>
                         <div class="cajaFlex">
-                            <div class="puntito"></div>
+                            <div class="puntito" style="margin-left: 60px;"></div>
                             <div class="br1">
                                 XAMPP
                             </div>
@@ -686,7 +798,7 @@
                 // Ajustar la altura del encabezado, el ancho y la opacidad del baner y la foto de perfil
                 var headerHeight = Math.max(200 - scrolled, 60);
                 var bannerWidth = Math.max(100 - scrolled / 4, 50);
-                var bannerOpacity = Math.max(1 - scrolled / 200, 0.8);
+                var bannerOpacity = Math.max(1 - scrolled / 200, 0.5);
                 var perfilSize = Math.max(180 - scrolled / 1, 50);
                 var perfilLeft = Math.max(50 - scrolled / 1, 25);
 
@@ -708,6 +820,16 @@
                 }
             });
 
+        </script>
+        <script>
+            window.addEventListener("scroll", function () {
+                var nombreElement = document.getElementById("nombreFijo");
+                if (window.pageYOffset > 270) {
+                    nombreElement.style.display = "block";
+                } else {
+                    nombreElement.style.display = "none";
+                }
+            });
         </script>
     </body>
 </html>
