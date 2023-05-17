@@ -90,16 +90,18 @@
                 overflow: hidden;
                 animation: shadowAnimacion 1s ease-in-out infinite alternate;
                 transition: 0.3s;
-                border: 5px green solid;
+                border: 6px green solid;
                 z-index: 1;
             }
 
             @keyframes shadowAnimacion {
                 0% {
                     box-shadow: 0px 0px 5px 0px rgba(0, 128, 0, 0.5);
+                    border: green solid;
                 }
                 100% {
                     box-shadow: 0px 0px 60px 0px rgba(0, 128, 0, 0.8);
+                    border: #00cc00 solid;
                 }
             }
 
@@ -210,13 +212,14 @@
                 border-radius: 5px;
                 font-weight: bold;
                 margin-top: 10px;
-                margin-bottom: 20px;
-                margin-left: 5%;
-                margin-right: 5%;
+                margin-bottom: 10px;
+                margin-left: 10px;
+                margin-right: 10px;
                 transition: 0.3s;
                 line-height: 40px;
                 text-align: center;
                 vertical-align: middle;
+                font-family: "h2";
                 animation: shadowAnimacion5 1s ease-in-out infinite alternate;
             }
 
@@ -259,6 +262,7 @@
             p {
                 font-family: "p";
                 text-align: justify;
+                font-size: 16px;
                 font-weight: bold;
             }
 
@@ -326,13 +330,14 @@
                 margin-top: 7px;
                 margin-bottom: 7px;
                 font-family: "p";
+                font-size: 16px;
                 font-weight: bold;
             }
 
             .puntito
             {
                 position: relative;
-                top: 11px;
+                top: 13px;
                 margin-right: 5px;
                 margin-left: 20px;
                 display: inline-block;
@@ -382,12 +387,31 @@
                 transition: 0.3s;
             }
 
-            @font-face 
+            .cajaPosicion
+            {
+                display: inline-block;
+                align-items: center;
+            }
+
+            h3
+            {
+                font-family: "h2";
+                font-size: 16px;
+            }
+
+            label
+            {
+                font-family: "p";
+                font-size: 14px;
+                font-weight: bold;
+            }
+
+            @font-face
             {
                 font-family: "h2";
                 src: url("h2.otf");
             }
-            @font-face 
+            @font-face
             {
                 font-family: "p";
                 src: url("p.otf");
@@ -476,14 +500,14 @@
 
             }
 
-            @media screen and (max-width: 500px)
+            @media screen and (max-width: 685px)
             {
-                #nombreFijo
+                .cajaPosicion
                 {
-                    right: -10%;
-                    transition: 0.3s;
+                    display: flex;
                 }
             }
+
             @media screen and (max-width: 500px)
             {
                 #nombreFijo
@@ -504,6 +528,18 @@
                     transition: 0.3s;
                 }
             }
+            @media screen and (max-width: 320px)
+            {
+                #nombreFijo
+                {
+                    width: 150px;
+                    right: 10%;
+                    top: 10px;
+                    font-size: 18px;
+                    transition: 0.3s;
+                }
+            }
+
 
         </style>
     </head>
@@ -526,8 +562,9 @@
                         medio de Electricidad, grado superior de Robótica en el instituto 
                         IES Serra D'espada (Onda), acabo de terminar mis estudios grado 
                         superior de Diseño de Aplicaciones Web (DAW) en IES Miralcamp 
-                        (Villarreal), también tengo carnet de conducir, busco mi primer
-                        trabajo.
+                        (Villarreal), busco trabajo sobre temas informaticos ya sea 
+                        programación diseño web y variantes, tengo carnet de conducir, 
+                        busco mi primer trabajo.
                     </p>
                     <!-- <ul id="datos">
                         <li><a href="#"><img src="facebook.png" alt="Facebook"></a></li>
@@ -535,10 +572,16 @@
                         <li><a href="#"><img src="instagram.png" alt="Instagram"></a></li>
                     </ul> -->
                     <div class="cajaBlock">
-                        <a href="mailto:xxxdddgggttt@gmail.com" class="boton">Email</a>
-                        <a href="tel:653578617" class="boton">Llamar</a>
+                        <div class="cajaPosicion">
+                            <a href="mailto:xxxdddgggttt@gmail.com" class="boton">Email</a>
+                            <label>xxxdddgggttt@gmail.com</label>
+                        </div>
+                        <div class="cajaPosicion">
+                            <a href="tel:653578617" class="boton">Llamar</a>
+                            <label style="text-align: center; width: 140px;">+34 653 578 617</label>
+                        </div>
                     </div>
-                    <h2 class="referencia">Experiencia profesional</h2>
+                    <h2 class="referencia" style="margin-top: 10px;">Experiencia profesional</h2>
                     <p class="refCont">
                         Soy hábil en el manejo de programas de ofimática y tengo 
                         experiencia en el uso de diferentes softwares de 
@@ -547,6 +590,12 @@
                         Python, Java, C++... y he trabajado con entornos de 
                         desarrollo integrados (IDE) como Visual Studio y 
                         NetBeans.
+                    </p>
+                    <h2 class="referencia">Preferencias</h2>
+                    <p class="refCont">
+                        Me gusta todo lo que tenga que ver con usar un ordenador 
+                        y me adapto a cualquier programa informático para 
+                        realizar todo tipo de proyectos.
                     </p>
                     <h2 class="referencia">Formación</h2>
                     <div class="refCont">
@@ -614,12 +663,6 @@
                             </div>
                         </div>
                     </div>
-                    <h2 class="referencia">Preferencias</h2>
-                    <p class="refCont">
-                        Me gusta todo lo que tenga que ver con usar un ordenador 
-                        y me adapto a cualquier programa informático para 
-                        realizar todo tipo de proyectos.
-                    </p>
                     <h2 class="referencia">Idiomas</h2>
                     <div class="refCont">
                         <div class="cajaFlex">
@@ -771,6 +814,19 @@
                             <div class="puntito" style="margin-left: 60px;"></div>
                             <div class="br1">
                                 XAMPP
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cajaFlex">
+                        <div class="espacioAux"></div>
+                        <div class="espacioAux"></div>
+                        <h2 class="referencia">Creaciones</h2>
+                    </div>
+                    <div class="refCont">
+                        <div class="cajaFlex">
+                            <div class="puntito" style="margin-left: 60px;"></div>
+                            <div class="br1">
+                                <a href="https://portalrickymorty.es">portalrickymorty.es</a>
                             </div>
                         </div>
                     </div>
