@@ -10,22 +10,22 @@
                 padding: 0;
                 box-sizing: border-box;
 
-                -webkit-touch-callout: none; /* Safari */
-                -webkit-user-select: none; /* Safari */
-                -khtml-user-select: none; /* Konqueror HTML */
-                -moz-user-select: none; /* Firefox */
-                -ms-user-select: none; /* Internet Explorer/Edge */
-                user-select: none; /* No estándar */
+                /*-webkit-touch-callout: none;
+                -webkit-user-select: none;
+                -khtml-user-select: none; 
+                -moz-user-select: none;
+                -ms-user-select: none; 
+                user-select: none; */
             }
 
             /* Habilitar la selección de texto */
             p, span, div, img {
-                -webkit-touch-callout: none; /* Safari */
-                -webkit-user-select: none; /* Safari */
-                -khtml-user-select: none; /* Konqueror HTML */
-                -moz-user-select: none; /* Firefox */
-                -ms-user-select: none; /* Internet Explorer/Edge */
-                user-select: none; /* No estándar */
+                /*-webkit-touch-callout: none;
+                -webkit-user-select: none; 
+                -khtml-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;*/
             }
 
 
@@ -405,6 +405,22 @@
                 font-weight: bold;
             }
 
+            .check
+            {
+                display: inline-block;
+                border: #00cc00 3px solid;
+                width: 20px;
+                height: 20px;
+                border-radius: 3px;
+            }
+
+            .check p
+            {
+                position: relative;
+                bottom: 5px;
+                left: 1px;
+            }
+
             @font-face
             {
                 font-family: "h2";
@@ -418,11 +434,6 @@
 
             @media screen and (max-width: 815px)
             {
-
-                body
-                {
-
-                }
 
                 #contenido
                 {
@@ -557,14 +568,23 @@
                 <div id="caja2">
                     <h1 id="nombre">David García Torres</h1>
                     <h2 class="referencia">Estudiante</h2>
-                    <p class="refCont">Mi edad es de 24 años, tengo el título de grado 
-                        medio de Electricidad, grado superior de Robótica en el instituto 
-                        IES Serra D'espada (Onda), acabo de terminar mis estudios grado 
-                        superior de Desarrollo de Aplicaciones Web (DAW) en IES Miralcamp 
-                        (Villarreal), busco trabajo sobre temas informaticos ya sea 
-                        programación diseño web y variantes, tengo carnet de conducir, 
-                        busco mi primer trabajo.
+                    <p class="refCont">
+                        Soy un joven de 24 años proactivo con formación 
+                        en electricidad, robótica y programación. Cuento con 
+                        títulos de Electricidad, Robótica y Informática. Me apasionan la programación, 
+                        el diseño web y las nuevas tecnologías. Tengo 
+                        facilidad para el trabajo en equipo, capacidad de 
+                        aprendizaje y disposición para aplicar mis 
+                        conocimientos en mi primer empleo relacionado con la 
+                        informática, donde pueda desarrollarme profesionalmente. 
+                        Busco activamente oportunidades para iniciar mi carrera 
+                        en el sector tecnológico, aprender y aportar valor con 
+                        mis competencias.
                     </p>
+                    <div class="cajaFlex">
+                        <div class="check"><p>✓</p></div>
+                        <p style="margin-left: 5px; margin-top: -1.5px;">Carnet de conducir</p>
+                    </div>
                     <!-- <ul id="datos">
                         <li><a href="#"><img src="facebook.png" alt="Facebook"></a></li>
                         <li><a href="#"><img src="twitter.png" alt="Twitter"></a></li>
@@ -626,17 +646,20 @@
                     <h2 class="referencia">Competencias</h2>
                     <div class="refCont">
                         <div class="cajaFlex">
+                        <div class="cajaFlex">
                             <div class="puntito"></div>
                             <div class="br1">
                                 Trabajo en equipo
                             </div>
                         </div>
                         <div class="cajaFlex">
-                            <div class="puntito"></div>
+                            <div class="puntito" style="margin-left: 150px;"></div>
                             <div class="br1">
                                 Adaptación a los cambios
                             </div>
                         </div>
+                    </div>
+                    <div class="cajaFlex">
                         <div class="cajaFlex">
                             <div class="puntito"></div>
                             <div class="br1">
@@ -644,11 +667,13 @@
                             </div>
                         </div>
                         <div class="cajaFlex">
-                            <div class="puntito"></div>
+                            <div class="puntito" style="margin-left: 27px;"></div>
                             <div class="br1">
                                 Orientación a resultados
                             </div>
                         </div>
+                    </div>
+                    <div class="cajaFlex">
                         <div class="cajaFlex">
                             <div class="puntito"></div>
                             <div class="br1">
@@ -656,11 +681,12 @@
                             </div>
                         </div>
                         <div class="cajaFlex">
-                            <div class="puntito"></div>
+                            <div class="puntito" style="margin-left: 54px;"></div>
                             <div class="br1">
                                 Ganas de aprender y superarme
                             </div>
                         </div>
+                    </div>
                     </div>
                     <h2 class="referencia">Idiomas</h2>
                     <div class="refCont">
@@ -708,17 +734,20 @@
                     </div>
                     <div class="refCont">
                         <div class="cajaFlex">
+                        <div class="cajaFlex">
                             <div class="puntito" style="margin-left: 60px;"></div>
                             <div class="br1">
                                 Omron CX-One
                             </div>
                         </div>
                         <div class="cajaFlex">
-                            <div class="puntito" style="margin-left: 60px;"></div>
+                            <div class="puntito" style="margin-left: 130px;"></div>
                             <div class="br1">
                                 Siemens TIA Portal
                             </div>
                         </div>
+                    </div>
+                    <div class="cajaFlex">
                         <div class="cajaFlex">
                             <div class="puntito" style="margin-left: 60px;"></div>
                             <div class="br1">
@@ -726,11 +755,13 @@
                             </div>
                         </div>
                         <div class="cajaFlex">
-                            <div class="puntito" style="margin-left: 60px;"></div>
+                            <div class="puntito" style="margin-left: 30px;"></div>
                             <div class="br1">
                                 Impresión 3D y variantes
                             </div>
                         </div>
+                    </div>
+                    <div class="cajaFlex">
                         <div class="cajaFlex">
                             <div class="puntito" style="margin-left: 60px;"></div>
                             <div class="br1">
@@ -738,11 +769,12 @@
                             </div>
                         </div>
                         <div class="cajaFlex">
-                            <div class="puntito" style="margin-left: 60px;"></div>
+                            <div class="puntito" style="margin-left: 142px;"></div>
                             <div class="br1">
                                 Robotstudio
                             </div>
                         </div>
+                    </div>
                     </div>
                     <div class="cajaFlex">
                         <div class="espacioAux"></div>
@@ -755,17 +787,20 @@
                     </div>
                     <div class="refCont">
                         <div class="cajaFlex">
+                        <div class="cajaFlex">
                             <div class="puntito" style="margin-left: 60px;"></div>
                             <div class="br1">
                                 Java
                             </div>
                         </div>
                         <div class="cajaFlex">
-                            <div class="puntito" style="margin-left: 60px;"></div>
+                            <div class="puntito" style="margin-left: 80px;"></div>
                             <div class="br1">
                                 Java Script
                             </div>
                         </div>
+                    </div>
+                    <div class="cajaFlex">
                         <div class="cajaFlex">
                             <div class="puntito" style="margin-left: 60px;"></div>
                             <div class="br1">
@@ -773,11 +808,13 @@
                             </div>
                         </div>
                         <div class="cajaFlex">
-                            <div class="puntito" style="margin-left: 60px;"></div>
+                            <div class="puntito" style="margin-left: 64px;"></div>
                             <div class="br1">
                                 CSS
                             </div>
                         </div>
+                    </div>
+                    <div class="cajaFlex">
                         <div class="cajaFlex">
                             <div class="puntito" style="margin-left: 60px;"></div>
                             <div class="br1">
@@ -785,11 +822,12 @@
                             </div>
                         </div>
                         <div class="cajaFlex">
-                            <div class="puntito" style="margin-left: 60px;"></div>
+                            <div class="puntito" style="margin-left: 78px;"></div>
                             <div class="br1">
                                 SQL
                             </div>
                         </div>
+                    </div>
                     </div>
                     <div class="cajaFlex">
                         <div class="espacioAux"></div>
